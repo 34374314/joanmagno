@@ -1,1 +1,44 @@
-testingggggg
+sudo apt update
+sudo apt upgrade
+sudo apt install qemu-guest-agent
+sudo ufw reset
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw limit ssh
+sudo ufw enable
+sudo ufw status verbose
+sudo fail2ban-client status sshd
+sudo timedatectl set-timezone Australia/Perth
+sudo apt install chrony -y
+
+sudo -i
+[sudo] password for jmagno: 
+cd /etc/ssh/sshd_config.d/
+nano 50-cloud-init.conf 
+cat 50-cloud-init.conf 
+PasswordAuthentication yes
+exit
+logout
+
+sudo reboot
+sudo apt install apache2 -y
+sudo systemctl enable --now apache2
+sudo apt install php php-cli php-common php-mysql php-gd php-mbstring php-xml php-curl unzip -y
+sudo apt install php-gd php-imap php-intl php-apcu -y
+php -v
+sudo apt install mariadb-server -y
+sudo systemctl enable --now mariadb
+sudo -i
+sudo systemctl status apache2
+sudo systemctl status mariadb
+
+scp Downloads/osTicket.zip
+mkdir temp
+mv osTicket.zip temp/
+cd temp/
+ls
+osTicket.zip
+unzip osTicket.zip 
+
