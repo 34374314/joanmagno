@@ -39,6 +39,33 @@ mkdir temp
 mv osTicket.zip temp/
 cd temp/
 ls
-osTicket.zip
+    osTicket.zip
 unzip osTicket.zip 
+    Archive:  osTicket.zip
+      inflating: osTicket-v1.18.2.zip    
+      inflating: auth-2fa.phar           
+      inflating: audit.phar              
+      inflating: auth-passthru.phar      
+      inflating: auth-ldap.phar          
+      inflating: auth-oauth2.phar        
+      inflating: auth-password-policy.phar  
+      inflating: storage-s3.phar         
+      inflating: storage-fs.phar         
+unzip osTicket-v1.18.2.zip
 
+jmagno@helpdesk:~/temp$ ls
+audit.phar     auth-ldap.phar    auth-passthru.phar         osTicket-v1.18.2.zip  scripts          storage-s3.phar
+auth-2fa.phar  auth-oauth2.phar  auth-password-policy.phar  osTicket.zip          storage-fs.phar  upload
+jmagno@helpdesk:~/temp$ cd upload/
+jmagno@helpdesk:~/temp/upload$ ls
+account.php  assets         client.inc.php  include    login.php     manage.php   profile.php     setup
+ajax.php     avatar.php     css             index.php  logo.php      offline.php  pwreset.php     tickets.php
+api          bootstrap.php  file.php        js         logout.php    open.php     scp             view.php
+apps         captcha.php    images          kb         main.inc.php  pages        secure.inc.php  web.config
+jmagno@helpdesk:~/temp/upload$ sudo mv * /var/www/html/
+jmagno@helpdesk:~/temp/upload$ cd ..
+ljmagno@helpdesk:~/temp$ ls
+audit.phar     auth-ldap.phar    auth-passthru.phar         osTicket-v1.18.2.zip  scripts/         storage-s3.phar
+auth-2fa.phar  auth-oauth2.phar  auth-password-policy.phar  osTicket.zip          storage-fs.phar  upload/
+jmagno@helpdesk:~/temp$ sudo mv *.phar /var/www/html/include/plugins/
+jmagno@helpdesk:~/temp$ 
