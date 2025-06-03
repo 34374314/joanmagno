@@ -68,4 +68,45 @@ ljmagno@helpdesk:~/temp$ ls
 audit.phar     auth-ldap.phar    auth-passthru.phar         osTicket-v1.18.2.zip  scripts/         storage-s3.phar
 auth-2fa.phar  auth-oauth2.phar  auth-password-policy.phar  osTicket.zip          storage-fs.phar  upload/
 jmagno@helpdesk:~/temp$ sudo mv *.phar /var/www/html/include/plugins/
-jmagno@helpdesk:~/temp$ 
+
+cd /var/www/html/
+ls -sal
+        total 160
+         4 drwxr-xr-x 13 root   root    4096 May 22 08:59 .
+         4 drwxr-xr-x  3 root   root    4096 May 22 08:32 ..
+         8 -rw-r--r--  1 jmagno jmagno  5440 Feb  4 09:58 account.php
+         4 -rw-r--r--  1 jmagno jmagno  1922 Feb  4 09:58 ajax.php
+         4 drwxrwxr-x  2 jmagno jmagno  4096 May 22 08:59 api
+         4 drwxrwxr-x  2 jmagno jmagno  4096 May 22 08:59 apps
+         4 drwxrwxr-x  4 jmagno jmagno  4096 May 22 08:59 assets
+         4 -rw-r--r--  1 jmagno jmagno  1086 Feb  4 09:58 avatar.php
+        16 -rw-r--r--  1 jmagno jmagno 16303 Feb  4 09:58 bootstrap.php
+         4 -rw-r--r--  1 jmagno jmagno   611 Feb  4 09:58 captcha.php
+         4 -rw-r--r--  1 jmagno jmagno  3071 Feb  4 09:58 client.inc.php
+         4 drwxrwxr-x  3 jmagno jmagno  4096 May 22 08:59 css
+         4 -rw-r--r--  1 jmagno jmagno  2353 Feb  4 09:58 file.php
+         4 drwxrwxr-x  3 jmagno jmagno  4096 May 22 08:59 images
+         4 drwxrwxr-x 13 jmagno jmagno  4096 May 22 08:59 include
+         4 -rw-r--r--  1 jmagno jmagno  2336 Feb  4 09:58 index.php
+         4 drwxrwxr-x  2 jmagno jmagno  4096 May 22 08:59 js
+         4 drwxrwxr-x  2 jmagno jmagno  4096 May 22 08:59 kb
+         8 -rw-r--r--  1 jmagno jmagno  5765 Feb  4 09:58 login.php
+         4 -rw-r--r--  1 jmagno jmagno   925 Feb  4 09:58 logo.php
+         4 -rw-r--r--  1 jmagno jmagno   732 Feb  4 09:58 logout.php
+         4 -rw-r--r--  1 jmagno jmagno  2032 Feb  4 09:58 main.inc.php
+         4 -rwxr-xr-x  1 jmagno jmagno  2338 Feb  4 09:58 manage.php
+         4 -rw-r--r--  1 jmagno jmagno   940 Feb  4 09:58 offline.php
+         4 -rw-r--r--  1 jmagno jmagno  3175 Feb  4 09:58 open.php
+         4 drwxrwxr-x  2 jmagno jmagno  4096 May 22 08:59 pages
+         4 -rw-r--r--  1 jmagno jmagno  1225 Feb  4 09:58 profile.php
+         4 -rw-r--r--  1 jmagno jmagno  3242 Feb  4 09:58 pwreset.php
+         4 drwxrwxr-x  6 jmagno jmagno  4096 May 22 08:59 scp
+         4 -rw-r--r--  1 jmagno jmagno  1163 Feb  4 09:58 secure.inc.php
+         4 drwxrwxr-x  9 jmagno jmagno  4096 May 22 08:59 setup
+         8 -rw-r--r--  1 jmagno jmagno  5793 Feb  4 09:58 tickets.php
+         4 -rw-r--r--  1 jmagno jmagno  1709 Feb  4 09:58 view.php
+         4 -rw-r--r--  1 jmagno jmagno  2197 Feb  4 09:58 web.config
+
+sudo chown -R root:www-data .
+
+
