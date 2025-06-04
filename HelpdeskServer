@@ -1,10 +1,10 @@
-#Run an update and install guest tools for the VM
+# Run an update and install guest tools for the VM
 
 sudo apt update
 sudo apt upgrade
 sudo apt install qemu-guest-agent
 
-
+# Setup the firewall
 
 sudo ufw reset
 sudo ufw default deny incoming
@@ -14,9 +14,17 @@ sudo ufw allow https
 sudo ufw limit ssh
 sudo ufw enable
 sudo ufw status verbose
+
+# Secure the SSH connection (ban after several attempts)
 sudo fail2ban-client status sshd
+
+# Set the time
 sudo timedatectl set-timezone Australia/Perth
+
+# Install chrony for accurate time
 sudo apt install chrony -y
+
+# Temporarily allow the client machine to ssh-copy-id
 
 sudo -i
 [sudo] password for jmagno: 
@@ -26,8 +34,12 @@ cat 50-cloud-init.conf
 PasswordAuthentication yes
 exit
 logout
+sudo systemctl restart sshd
 
 sudo reboot
+
+# Install Apache, PHP, and MariaDB for the website
+
 sudo apt install apache2 -y
 sudo systemctl enable --now apache2
 sudo apt install php php-cli php-common php-mysql php-gd php-mbstring php-xml php-curl unzip -y
@@ -38,6 +50,8 @@ sudo systemctl enable --now mariadb
 sudo -i
 sudo systemctl status apache2
 sudo systemctl status mariadb
+
+# Install osTicket
 
 scp Downloads/osTicket.zip
 mkdir temp
