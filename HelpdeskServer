@@ -1,6 +1,11 @@
+#Run an update and install guest tools for the VM
+
 sudo apt update
 sudo apt upgrade
 sudo apt install qemu-guest-agent
+
+
+
 sudo ufw reset
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
