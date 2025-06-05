@@ -72,6 +72,8 @@ unzip osTicket.zip
       inflating: storage-fs.phar         
 unzip osTicket-v1.18.2.zip
 
+# Move files to the web root
+
 jmagno@helpdesk:~/temp$ ls
 audit.phar     auth-ldap.phar    auth-passthru.phar         osTicket-v1.18.2.zip  scripts          storage-s3.phar
 auth-2fa.phar  auth-oauth2.phar  auth-password-policy.phar  osTicket.zip          storage-fs.phar  upload
@@ -87,7 +89,7 @@ ljmagno@helpdesk:~/temp$ ls
 audit.phar     auth-ldap.phar    auth-passthru.phar         osTicket-v1.18.2.zip  scripts/         storage-s3.phar
 auth-2fa.phar  auth-oauth2.phar  auth-password-policy.phar  osTicket.zip          storage-fs.phar  upload/
 jmagno@helpdesk:~/temp$ sudo mv *.phar /var/www/html/include/plugins/
-
+-s-
 cd /var/www/html/
 ls -sal
         total 160
@@ -126,22 +128,23 @@ ls -sal
          4 -rw-r--r--  1 jmagno jmagno  1709 Feb  4 09:58 view.php
          4 -rw-r--r--  1 jmagno jmagno  2197 Feb  4 09:58 web.config
 
+# Make the root use as the owner
 sudo chown -R root:www-data .
 
-
+# Connect to MySQL
 sudo -i
 mysql -uroot
 
-
+# Copy sample config
 jmagno@helpdesk:/var/www/html$ sudo cp include/ost-sampleconfig.php include/ost-config.php
 jmagno@helpdesk:/var/www/html$ sudo chmod 0666 include/ost-config.php
 jmagno@helpdesk:/var/www/html$
 
 osTicket Installation completed in Web page
-
+# Grant fewer permissions after installation
 jmagno@helpdesk:/var/www/html$ sudo chmod 0644 include/ost-config.php
-jmagno@helpdesk:/var/www/html$
 
+# Install Certbot
 jmagno@helpdesk:/var/www/html$ sudo apt install certbot python3-certbot-apache -y
 
 jmagno@helpdesk:/var/www/html$ sudo certbot
@@ -186,5 +189,6 @@ If you like Certbot, please consider supporting our work by:
  * Donating to EFF:                    https://eff.org/donate-le
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+#Restart apache after the installation
 sudo systemctl restart apache2
 
