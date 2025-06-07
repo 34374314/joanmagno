@@ -1,3 +1,7 @@
+Joan Magno 34374314 ICT171
+
+Visit the website at https://helpdesk.street.id.au/scp/login.php
+
 # Run an update and install guest tools for the VM
 
 sudo apt update
@@ -189,6 +193,6 @@ If you like Certbot, please consider supporting our work by:
  * Donating to EFF:                    https://eff.org/donate-le
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-#Restart apache after the installation
+#Restart Apache after the installation
 sudo systemctl restart apache2
 
