@@ -28,6 +28,11 @@ sudo timedatectl set-timezone Australia/Perth
 # Install chrony for accurate time
 sudo apt install chrony -y
 
+#Setup hostname
+cd etc
+nano hostname
+    helpdesk
+
 # Temporarily allow the client machine to ssh-copy-id
 
 sudo -i
